@@ -14,6 +14,8 @@ public class Connection {
 	private Socket socket; // socket for the underlying TCP connection
 
 	public Connection(Socket socket) {
+		
+		//dette er en test
 
 		try {
 
