@@ -1,5 +1,9 @@
 package no.hvl.dat110.messaging;
 
+import java.io.IOException;
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.net.SocketException;
 import java.util.Arrays;
 
 import no.hvl.dat110.TODO;
@@ -21,16 +25,18 @@ public class Message {
 	}
 
 	public byte[] encapsulate() {
-		
-		byte[] encoded = null;
-		
 		// TODO
 		// encapulate/encode the payload of this message in the
 		// encoded byte array according to message format
+		byte[] encoded = new byte[128]; //Bytes som vi ønsker å encapulate, i størrelse 128
 		
-		if (true)
-		   throw new UnsupportedOperationException(TODO.method());
-
+		encoded[0] = ((Integer) this.payload.length).byteValue(); //Gjør om til byte value
+		
+		for (int i = 1; i < this.payload.length; i++) { //stapper payload inn i encoded, byte for byte
+			encoded[i] = this.payload[i-1];
+		}
+		
+		
 		return encoded;
 		
 	}
