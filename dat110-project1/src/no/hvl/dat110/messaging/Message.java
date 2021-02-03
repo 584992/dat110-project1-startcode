@@ -40,7 +40,8 @@ public class Message {
 		return encoded;
 		
 	}
-
+ 
+	
 	public void decapsulate(byte[] received) {
 
 		// TODO
