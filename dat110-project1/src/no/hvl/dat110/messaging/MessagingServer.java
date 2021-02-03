@@ -1,5 +1,6 @@
 package no.hvl.dat110.messaging;
 
+import java.io.DataInputStream;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -23,16 +24,29 @@ public class MessagingServer {
 		}
 	}
 
-	// accept an incoming connection from a client
+	/**
+	 * Accepts an incoming connection from a client
+	 * @author Emma
+	 * 
+	 * @return messaging connection
+	 */
 	public Connection accept() {
 
+		// accept TCP connection on welcome socket and create messaging connection
+		// Vi har allerede en Serversocket (welcomeSocket) som er blitt initalisert i konstruktøren. 
+		// Ved å bruke metoden welcomeSocket.accept() så 
+		// får vi returnert en socket som vi kan bruke til å snakke med klienten. 
+		
+		
+		
 		Connection connection = null;
 
-		// TODO
-		// accept TCP connection on welcome socket and create messaging connection
-
-		if (true) {
-			throw new UnsupportedOperationException(TODO.method());
+		try {
+			connection = new Connection(welcomeSocket.accept());
+		} catch (IOException e) {
+			System.out.println("TCPServer: " + e.getMessage());
+			e.printStackTrace();
+			System.exit(1);
 		}
 
 		return connection;
