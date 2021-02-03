@@ -12,15 +12,21 @@ public class RPCUtils {
 	// RPC message syntax [rpcid,parameter/return value]
 	
 	public static byte[] marshallString(byte rpcid, String str) {
-
-		byte[] encoded;
-
+		
+		//TODO:: Tror ikke dette funker som det skal.... må lese mer på det
 		// TODO: marshall RPC identifier and string into byte array
 
-		if (true) {
-			throw new UnsupportedOperationException(TODO.method());
+		byte[] encoded;
+		byte[] mid = str.getBytes();
+		
+		encoded = new byte[mid.length];
+		encoded[0] = rpcid;
+	
+		
+		for(int i = 0; i < mid.length; i++) {
+			encoded[i+1] = mid[i];	
 		}
-
+		
 		return encoded;
 	}
 
