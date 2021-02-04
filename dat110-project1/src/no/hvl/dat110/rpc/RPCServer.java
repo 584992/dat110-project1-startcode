@@ -57,12 +57,11 @@ public class RPCServer {
 
 			// 3.) Finner metoden som skal brukes
 			RPCImpl metode = services.get(rpcid);
-			System.out.println(metode);
 			
 			// 4.) Kjører denne metoden
-			
+			metode.invoke(RPCRequest.getData());
 
-			// 5.)
+			// 5.) Send tilbake endringer
 			
 
 			
