@@ -24,6 +24,10 @@ public class Message {
 		return this.payload; 
 	}
 
+	/**
+	 * @author vilde
+	 * @return encoded -> den nye payloaden som blir encapsulated. 
+	 */
 	public byte[] encapsulate() {
 		// TODO
 		// encapulate/encode the payload of this message in the
@@ -41,12 +45,17 @@ public class Message {
 		
 	}
 
+	/**
+	 * @author vilde
+	 * @param received -> payloaden blir omgjort (fjerner header, altså byte-lengden på plass[0])
+	 */
 	public void decapsulate(byte[] received) {
 
 		// TODO
 		// decapsulate the data contained in the received byte array and store it 
 		// in the payload of this message
-		payload = new byte[received.length];
+		int lengde = received.length;
+		payload = new byte[lengde];
 		
 		for (int i = 0; i < this.payload.length; i++) {
 			this.payload[i] = received[i];
