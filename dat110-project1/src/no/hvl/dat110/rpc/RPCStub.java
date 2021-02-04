@@ -10,4 +10,12 @@ public abstract class RPCStub {
 		this.rpcclient = rmiclient;
 	}
 	
+	
+	/*
+	 *  HOLA NINAS! 
+	 *  COMO ESTAS?
+	 *  QUIEREN HABLAR ESPANOL? 
+	 *  GRACIAS
+	 *  MI AMIGAS
+	 */
 }
