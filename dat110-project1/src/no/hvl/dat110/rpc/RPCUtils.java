@@ -33,11 +33,10 @@ public class RPCUtils {
 		byte[] mid = str.getBytes();
 		
 		encoded = new byte[mid.length];
-		encoded[0] = rpcid;
-	
+		//encoded[0] = rpcid;
 		
 		for(int i = 0; i < mid.length; i++) {
-			encoded[i+1] = mid[i];	
+			encoded[i] = mid[i];	
 		}
 		
 		return encoded;
@@ -45,13 +44,9 @@ public class RPCUtils {
 
 	public static String unmarshallString(byte[] data) {
 
-		String decoded;
+		String decoded = new String(data);
 
 		// TODO: unmarshall String contained in data into decoded
-
-		if (true) {
-			throw new UnsupportedOperationException(TODO.method());
-		}
 
 		return decoded;
 	}
