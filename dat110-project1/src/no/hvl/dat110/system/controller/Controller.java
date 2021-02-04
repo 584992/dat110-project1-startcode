@@ -37,8 +37,8 @@ public class Controller  {
 		DisplayDevice displaydevice;
 		SensorDevice sensordevice;
 		// register display and sensor objects in the RPC layer, ????
-		displayclient.register(displaydevice);
-		sensorclient.register(stopsensor);
+		//displayclient.register(displaydevice);
+		//sensorclient.register(stopsensor);
 		
 		
 		// register stop methods in the RPC layer
@@ -47,11 +47,10 @@ public class Controller  {
 		
 		// TODO:
 		// loop while reading from sensor and write to display via RPC
-		
-		if (true) {
-			throw new UnsupportedOperationException(TODO.method());
-			}
-		
+		for(int i = 0;i<N;i++) {
+			Integer temp = sensor.read();
+			display.write(temp.toString());
+		}
 		stopdisplay.stop();
 		stopsensor.stop();
 	
