@@ -26,7 +26,7 @@ public class Message {
 
 	/**
 	 * @author vilde
-	 * @return encoded -> den nye payloaden som blir encapsulated.
+	 * @return encoded -> den nye payloaden som blir encapsulated. hh
 	 */
 	public byte[] encapsulate() {
 		// TODO
