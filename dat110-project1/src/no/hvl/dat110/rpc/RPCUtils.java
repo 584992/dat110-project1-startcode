@@ -32,11 +32,10 @@ public class RPCUtils {
 
 		byte[] encoded;
 		byte[] mid = str.getBytes();
-		
 		encoded = new byte[mid.length];
+		encoded[0] = rpcid;
 		
-		
-		for(int i = 0; i < mid.length; i++) {
+		for(int i = 1; i < mid.length; i++) {
 			encoded[i] = mid[i];	
 		}
 		
