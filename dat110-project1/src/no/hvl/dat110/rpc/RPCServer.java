@@ -62,8 +62,7 @@ public class RPCServer {
 			metode.invoke(RPCRequest.getData());
 
 			// 5.) Send tilbake endringer
-			
-
+			connection.send(RPCRequest);
 			
 			
 			if (true) {
