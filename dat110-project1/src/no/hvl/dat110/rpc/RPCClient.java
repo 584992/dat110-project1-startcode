@@ -5,6 +5,11 @@ import java.net.Socket;
 import no.hvl.dat110.TODO;
 import no.hvl.dat110.messaging.*;
 
+/**
+ * 
+ * @author ehell
+ *
+ */
 
 public class RPCClient {
 

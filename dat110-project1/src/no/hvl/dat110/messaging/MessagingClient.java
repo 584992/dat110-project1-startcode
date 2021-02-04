@@ -15,24 +15,21 @@ public class MessagingClient {
 		this.server = server;
 		this.port = port;
 	}
+
 	// connect to messaging server
 	public Connection connect() {
+
+		Socket clientSocket = new Socket();
+		Connection connection = null;
+		
 
 		// TODO
 		// create TCP socket for client and connection
 		// create connection object
 		
-		Connection connection = null;
-
-		try {
-			// Lager en socket som skal prøve å koble seg til serveren vår. :)
-			Socket clientSocket = new Socket(server, port);
-			connection = new Connection(clientSocket);
-			
-		} catch (IOException e) {
-			System.out.println("TCPServer: " + e.getMessage());
-			e.printStackTrace();
-			System.exit(1);
+		
+		if (true) {
+			throw new UnsupportedOperationException(TODO.method());
 		}
 
 		return connection;
