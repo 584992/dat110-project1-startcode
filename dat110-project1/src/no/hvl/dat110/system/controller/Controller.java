@@ -8,6 +8,10 @@ public class Controller  {
 	
 	private static int N = 5;
 	
+	/**
+	 * @author Regine
+	 * @param args
+	 */
 	public static void main (String[] args) {
 		
 		Display display;
@@ -27,6 +31,8 @@ public class Controller  {
 		// connect to sensor and display RPC servers
 		// create local display and sensor objects
 		// register display and sensor objects in the RPC layer
+		displayclient.connect();
+		
 		
 		if (true) {
 			throw new UnsupportedOperationException(TODO.method());
