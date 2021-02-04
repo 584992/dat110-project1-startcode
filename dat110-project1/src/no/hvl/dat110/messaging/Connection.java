@@ -60,7 +60,7 @@ public class Connection {
 	public Message receive() { //Reggie
 
 		Message message = new Message();
-		byte[] recvbuf = null;
+		byte[] recvbuf = new byte[128];
 
 		// TODO
 		// read a segment (128 bytes) from the input stream and decapsulate into message
