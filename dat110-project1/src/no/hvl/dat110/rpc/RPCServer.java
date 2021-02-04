@@ -52,17 +52,14 @@ public class RPCServer {
 			// 1.) Henter beskjeden
 			Message RPCRequest = connection.receive();
 
-			// 2.) Identifier = sensorid? byte32-47 = sensorId
-			byte[] sensorId = new byte[15];
-			
-			for (int i = 0; i < RPCRequest.getData().length; i++) {
-				sensorId[i] = RPCRequest.getData()[i];
-			}
+			// 2.) RPC id  = RPCRequest[0]
+			rpcid = RPCRequest.getData()[0];
 
-			// 3.)
+			// 3.) Finner metoden som skal brukes
+			RPCImpl metode = services.get(rpcid);
+			System.out.println(metode);
 			
-			
-			// 4.)
+			// 4.) Kjører denne metoden
 			
 
 			// 5.)
