@@ -65,9 +65,9 @@ public class RPCServer {
 			connection.send(RPCRequest);
 			
 			
-			if (true) {
-				throw new UnsupportedOperationException(TODO.method());
-			}
+//			if (true) {
+//				throw new UnsupportedOperationException(TODO.method());
+//			}
 
 			if (rpcid == RPCCommon.RPIDSTOP) {
 				stop = true;
