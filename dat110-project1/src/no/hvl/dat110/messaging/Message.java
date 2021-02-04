@@ -45,7 +45,7 @@ public class Message {
 	}
 
 	/**
-	 * @author vilde
+	 * @author vilde & emma
 	 * @param received -> payloaden blir omgjort (fjerner header, altså byte-lengden
 	 *                 på plass[0])
 	 */
