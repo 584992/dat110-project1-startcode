@@ -25,6 +25,7 @@ public class RPCClient {
 		remote.register(this);
 	}
 	
+
 	public void connect() {
 		
 		// TODO: connect using the underlying messaging layer connection
