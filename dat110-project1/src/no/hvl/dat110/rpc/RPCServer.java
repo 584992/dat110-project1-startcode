@@ -50,16 +50,20 @@ public class RPCServer {
 			// - (5) send back message containing RPC reply
 
 			// 1.) Henter beskjeden
-			Message message = connection.receive();
+			Message RPCRequest = connection.receive();
 
-			// 2.)
+			// 2.) Identifier = sensorid? byte32-47 = sensorId
+			byte[] sensorId = new byte[15];
 			
+			for (int i = 0; i < RPCRequest.getData().length; i++) {
+				sensorId[i] = RPCRequest.getData()[i];
+			}
 
 			// 3.)
 			
 			
 			// 4.)
-			register()
+			
 
 			// 5.)
 			
