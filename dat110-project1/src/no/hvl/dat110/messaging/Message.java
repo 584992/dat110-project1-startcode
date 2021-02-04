@@ -32,7 +32,7 @@ public class Message {
 		
 		encoded[0] = ((Integer) this.payload.length).byteValue(); //Gjør om til byte value
 		
-		for (int i = 1; i < this.payload.length; i++) { //stapper payload inn i encoded, byte for byte
+		for (int i = 1; i <= this.payload.length; i++) { //stapper payload inn i encoded, byte for byte
 			encoded[i] = this.payload[i-1];
 		}
 		
