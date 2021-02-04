@@ -49,8 +49,6 @@ public class Connection {
 			e.printStackTrace();
 		}
 		
-		
-		throw new UnsupportedOperationException(TODO.method());
 
 	}
 	
@@ -75,9 +73,6 @@ public class Connection {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		if (true) {
-			throw new RuntimeException("not yet implemented");
-		}
 
 		return message;
 
@@ -90,7 +85,6 @@ public class Connection {
 			
 			outStream.close();
 			inStream.close();
-
 			socket.close();
 		} catch (IOException ex) {
 
