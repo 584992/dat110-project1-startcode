@@ -9,7 +9,7 @@ import java.util.Arrays;
 import no.hvl.dat110.TODO;
 
 public class Message {
-	//tester konflikt greier
+	
 
 	private byte[] payload;
 
