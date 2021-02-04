@@ -1,5 +1,7 @@
 package no.hvl.dat110.rpc;
 
+import java.math.BigInteger;
+import java.nio.ByteBuffer;
 import java.util.Arrays;
 
 import no.hvl.dat110.TODO;
@@ -26,14 +28,13 @@ public class RPCUtils {
 	 */
 	public static byte[] marshallString(byte rpcid, String str) {
 		
-		//TODO:: Tror ikke dette funker som det skal.... må lese mer på det
 		// TODO: marshall RPC identifier and string into byte array
 
 		byte[] encoded;
 		byte[] mid = str.getBytes();
 		
 		encoded = new byte[mid.length];
-		//encoded[0] = rpcid;
+		
 		
 		for(int i = 0; i < mid.length; i++) {
 			encoded[i] = mid[i];	
@@ -42,15 +43,20 @@ public class RPCUtils {
 		return encoded;
 	}
 
+	
+	/**
+	 * @author Regine
+	 * @param data in bytes
+	 * @return data unmarshalled into String
+	 */
 	public static String unmarshallString(byte[] data) {
-
-		String decoded = new String(data);
-
 		// TODO: unmarshall String contained in data into decoded
-
+		String decoded = new String(data);
 		return decoded;
 	}
 
+	
+	
 	public static byte[] marshallVoid(byte rpcid) {
 
 		byte[] encoded;
@@ -91,29 +97,23 @@ public class RPCUtils {
 
 	}
 
+	/**
+	 * @author Regine
+	 * @param rpcid
+	 * @param x
+	 * @return
+	 */
 	public static byte[] marshallInteger(byte rpcid, int x) {
-
-		byte[] encoded;
-
 		// TODO: marshall RPC identifier and string into byte array
-
-		if (true) {
-			throw new UnsupportedOperationException(TODO.method());
-		}
-
+		BigInteger bigInt = BigInteger.valueOf(x);      
+		byte[] encoded = bigInt.toByteArray();
 		return encoded;
 	}
 
 	public static int unmarshallInteger(byte[] data) {
-
-		int decoded;
-
 		// TODO: unmarshall integer contained in data
-
-		if (true) {
-			throw new UnsupportedOperationException(TODO.method());
-		}
-
+		ByteBuffer byteBuffer = ByteBuffer.wrap(data);
+		int decoded = byteBuffer.getInt();
 		return decoded;
 
 	}
