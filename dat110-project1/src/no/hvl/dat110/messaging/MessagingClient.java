@@ -16,6 +16,11 @@ public class MessagingClient {
 		this.port = port;
 	}
 
+	
+	/**
+	 * @author ehell
+	 * @return en connection
+	 */
 	// connect to messaging server
 	public Connection connect() {
 

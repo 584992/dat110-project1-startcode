@@ -21,48 +21,48 @@ public class Message {
 	}
 
 	public byte[] getData() {
-		return this.payload; 
+		return this.payload;
 	}
 
 	/**
 	 * @author vilde
-	 * @return encoded -> den nye payloaden som blir encapsulated. 
+	 * @return encoded -> den nye payloaden som blir encapsulated.
 	 */
 	public byte[] encapsulate() {
 		// TODO
 		// encapulate/encode the payload of this message in the
 		// encoded byte array according to message format
-		byte[] encoded = new byte[128]; //Bytes som vi ønsker å encapulate, i størrelse 128
-		
-		encoded[0] = ((Integer) this.payload.length).byteValue(); //Gjør om til byte value
-		
-		for (int i = 1; i <= this.payload.length; i++) { //stapper payload inn i encoded, byte for byte
-			encoded[i] = this.payload[i-1];
+		byte[] encoded = new byte[128]; // Bytes som vi ønsker å encapulate, i størrelse 128
+
+		encoded[0] = ((Integer) payload.length).byteValue(); // Gjør om til byte value
+
+		for (int i = 1; i <= payload.length; i++) { // stapper payload inn i encoded, byte for byte
+			encoded[i] = payload[i - 1];
 		}
-		
-		
+
 		return encoded;
-		
+
 	}
 
 	/**
 	 * @author vilde
-	 * @param received -> payloaden blir omgjort (fjerner header, altså byte-lengden på plass[0])
+	 * @param received -> payloaden blir omgjort (fjerner header, altså byte-lengden
+	 *                 på plass[0])
 	 */
 	public void decapsulate(byte[] received) {
 
 		// TODO
-		// decapsulate the data contained in the received byte array and store it 
+		// decapsulate the data contained in the received byte array and store it
 		// in the payload of this message
-		int lengde = received.length;
-		payload = new byte[lengde];
-		
-		for (int i = 0; i < this.payload.length; i++) {
-			this.payload[i] = received[i];
+	//	int lengde = received.length;
+	//	System.out.println(lengde);
+		payload = new byte[received[0]];
+
+		for (int i = 0; i < payload.length; i++) {
+			payload[i] = received[i+1];
 		}
-		
-		
+
 //		throw new UnsupportedOperationException(TODO.method());
-		
+
 	}
 }

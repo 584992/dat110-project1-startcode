@@ -26,7 +26,7 @@ public class MessagingServer {
 
 	/**
 	 * Accepts an incoming connection from a client
-	 * @author Emma
+	 * @author ehell
 	 * 
 	 * @return messaging connection
 	 */
