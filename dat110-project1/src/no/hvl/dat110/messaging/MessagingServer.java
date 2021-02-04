@@ -24,6 +24,12 @@ public class MessagingServer {
 		}
 	}
 
+	/**
+	 * Accepts an incoming connection from a client
+	 * @author Emma
+	 * 
+	 * @return messaging connection
+	 */
 	public Connection accept() {
 
 		// accept TCP connection on welcome socket and create messaging connection
