@@ -46,8 +46,14 @@ public class Message {
 		// TODO
 		// decapsulate the data contained in the received byte array and store it 
 		// in the payload of this message
+		payload = new byte[received.length];
 		
-		throw new UnsupportedOperationException(TODO.method());
+		for (int i = 0; i < this.payload.length; i++) {
+			this.payload[i] = received[i];
+		}
+		
+		
+//		throw new UnsupportedOperationException(TODO.method());
 		
 	}
 }
