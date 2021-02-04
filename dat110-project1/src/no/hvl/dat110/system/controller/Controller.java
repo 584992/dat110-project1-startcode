@@ -37,7 +37,7 @@ public class Controller  {
 		DisplayDevice displaydevice;
 		SensorDevice sensordevice;
 		// register display and sensor objects in the RPC layer, ????
-		displayclient.register(display);
+		displayclient.register(displaydevice);
 		sensorclient.register(stopsensor);
 		
 		
