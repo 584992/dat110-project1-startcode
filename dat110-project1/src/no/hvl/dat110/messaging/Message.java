@@ -9,7 +9,6 @@ import java.util.Arrays;
 import no.hvl.dat110.TODO;
 
 public class Message {
-	// tester shit 
 
 	private byte[] payload;
 
