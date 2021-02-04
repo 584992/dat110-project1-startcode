@@ -30,13 +30,15 @@ public class RPCUtils {
 		
 		// TODO: marshall RPC identifier and string into byte array
 
+		System.out.println("Før marshalling: " + str);
+		
 		byte[] encoded;
 		byte[] mid = str.getBytes();
-		encoded = new byte[mid.length];
+		encoded = new byte[mid.length +1];
 		encoded[0] = rpcid;
 		
-		for(int i = 1; i < mid.length; i++) {
-			encoded[i] = mid[i];	
+		for(int i = 0; i < mid.length; i++) {
+			encoded[i+1] = mid[i];	
 		}
 		
 		return encoded;
@@ -44,13 +46,21 @@ public class RPCUtils {
 
 	
 	/**
-	 * @author Regine
+	 * @author Regine & Emma
 	 * @param data in bytes
 	 * @return data unmarshalled into String
 	 */
 	public static String unmarshallString(byte[] data) {
 		// TODO: unmarshall String contained in data into decoded
-		String decoded = new String(data);
+		
+		byte[] mid = new byte[data.length - 1];
+		for(int i = 0; i < mid.length; i++) {
+			mid[i] = data[i+1];
+		}
+		
+		String decoded = new String(mid);
+		
+		System.out.println("Etter marshalling: " + decoded);
 		return decoded;
 	}
 
