@@ -6,7 +6,7 @@ import no.hvl.dat110.TODO;
 import no.hvl.dat110.messaging.*;
 
 
-public class RPCClient {
+public class RPCClient extends RPCStub {
 
 	private MessagingClient msgclient;
 	private Connection connection;
@@ -46,12 +46,28 @@ public class RPCClient {
 		//throw new UnsupportedOperationException(TODO.method());
 		
 	}
-	
+	/**
+	 * @author ehell
+	 * @param rpcrequest
+	 * @return
+	 */
 	public byte[] call(byte[] rpcrequest) {
+		
+		// implements the client-side of the RPC layer using the client-side 
+		// of the underlying messaging layer for communication.
 		
 		byte[] rpcreply;
 		
-		/* TODO: 
+		Message sendMessage = new Message(rpcrequest);
+		
+		connection.send(sendMessage);
+		
+		
+		
+		Message recieveMessage = connection.receive();
+		
+		rpcreply = recieveMessage.getData();
+		/*
 		
 		Make a remote call on the RPC server by sending the RPC request message
 		and receive an RPC reply message
@@ -60,10 +76,6 @@ public class RPCClient {
 		rpctreply is the rpcreply to be unmarshalled by the client-stub
 		
 		*/
-		
-		if (true) {
-			throw new UnsupportedOperationException(TODO.method());
-		}
 		
 		return rpcreply;
 		
