@@ -3,6 +3,8 @@ package no.hvl.dat110.system.controller;
 import no.hvl.dat110.TODO;
 import no.hvl.dat110.rpc.RPCClient;
 import no.hvl.dat110.rpc.RPCServerStopStub;
+import no.hvl.dat110.system.display.DisplayDevice;
+import no.hvl.dat110.system.sensor.SensorDevice;
 
 public class Controller  {
 	
@@ -28,15 +30,16 @@ public class Controller  {
 		sensorclient = new RPCClient(Common.SENSORHOST,Common.SENSORPORT);
 		
 		// TODO
-		// connect to sensor and display RPC servers
-		// create local display and sensor objects
-		// register display and sensor objects in the RPC layer
+		// connect to sensor and display RPC servers, GJORT
 		displayclient.connect();
+		sensorclient.connect();
+		// create local display and sensor objects, GJORT
+		DisplayDevice displaydevice;
+		SensorDevice sensordevice;
+		// register display and sensor objects in the RPC layer, ????
+		displayclient.register(display);
+		sensorclient.register(stopsensor);
 		
-		
-		if (true) {
-			throw new UnsupportedOperationException(TODO.method());
-		}
 		
 		// register stop methods in the RPC layer
 		displayclient.register(stopdisplay);
