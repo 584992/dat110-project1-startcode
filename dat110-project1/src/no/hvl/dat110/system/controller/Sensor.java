@@ -2,6 +2,7 @@ package no.hvl.dat110.system.controller;
 
 import no.hvl.dat110.TODO;
 import no.hvl.dat110.rpc.*;
+
 /**
  * 
  * @author Regine
@@ -10,19 +11,15 @@ import no.hvl.dat110.rpc.*;
 public class Sensor extends RPCStub {
 
 	private byte RPCID = 1;
-	
+
+	// TODO
+	// implement marshalling, call and unmarshalling for read RPC method
 	public int read() {
-		
 		int temp;
-		
-		// TODO
-		// implement marshalling, call and unmarshalling for read RPC method
-		
-		if (true) {
-			throw new UnsupportedOperationException(TODO.method());
-		}
-		
+		byte[] request = RPCUtils.marshallString(RPCID, message);
+		byte[] response = rpcclient.call(request);
+		RPCUtils.unmarshallString(response);
 		return temp;
 	}
-	
+
 }
