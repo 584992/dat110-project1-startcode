@@ -14,7 +14,7 @@ public class RPCUtils {
 	
 	/**
 	 * 
-	 * @author Emma
+	 * @author Emma & Regine
 	 * @param rpcid
 	 * id-en til RPC
 	 * 
