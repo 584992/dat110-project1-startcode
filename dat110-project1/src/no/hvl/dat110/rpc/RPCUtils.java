@@ -11,33 +11,13 @@ public class RPCUtils {
 	// data bytearrays and return byte arrays is according to the 
 	// RPC message syntax [rpcid,parameter/return value]
 	
-	
-	/**
-	 * 
-	 * @author Emma
-	 * @param rpcid
-	 * id-en til RPC
-	 * 
-	 * @param str
-	 * Stringen som skal bli gjort om til en tabell av bytes.
-	 * 
-	 * 
-	 * @return tabell av bytes + ekstra info. 
-	 */
 	public static byte[] marshallString(byte rpcid, String str) {
-		
-		//TODO:: Tror ikke dette funker som det skal.... må lese mer på det
 		// TODO: marshall RPC identifier and string into byte array
-
+		
 		byte[] encoded;
-		byte[] mid = str.getBytes();
 		
-		encoded = new byte[mid.length];
-		encoded[0] = rpcid;
-	
-		
-		for(int i = 0; i < mid.length; i++) {
-			encoded[i+1] = mid[i];	
+		if (true) {
+			throw new UnsupportedOperationException(TODO.method());
 		}
 		
 		return encoded;
