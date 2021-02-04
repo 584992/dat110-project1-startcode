@@ -44,11 +44,17 @@ public class RPCServer {
 		   int rpcid;
 		   
 		   // TODO
-		   // - receive message containing RPC request
-		   // - find the identifier for the RPC methods to invoke
-		   // - lookup the method to be invoked
-		   // - invoke the method
-		   // - send back message containing RPC reply
+		   // - (1) receive message containing RPC request
+		   // - (2) find the identifier for the RPC methods to invoke
+		   // - (3) lookup the method to be invoked
+		   // - (4) invoke the method
+		   // - (5) send back message containing RPC reply
+		   
+		   //1.) 
+		   Message message = connection.receive();
+		   
+		   //2.)
+		   
 			
 		   if (true) {
 			   throw new UnsupportedOperationException(TODO.method());
