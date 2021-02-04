@@ -8,15 +8,15 @@ import no.hvl.dat110.system.sensor.SensorImpl;
  * @author Regine
  */
 public class Sensor extends RPCStub {
-
+	private SensorImpl sensorImpl;
 	private byte RPCID = 1;
 
 	// TODO
 	// implement marshalling, call and unmarshalling for read RPC method
 	public int read() {
-		int temp = SensorImpl.read();
+		int temp = sensorImpl.read();
 		
-		byte[] request = RPCUtils.marshallInteger(RPCID, message);
+		byte[] request = RPCUtils.marshallInteger(RPCID, temp);
 		byte[] response = rpcclient.call(request);
 		RPCUtils.unmarshallInteger(response);
 		return temp;
