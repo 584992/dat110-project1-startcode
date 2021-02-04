@@ -5,11 +5,6 @@ import java.net.Socket;
 import no.hvl.dat110.TODO;
 import no.hvl.dat110.messaging.*;
 
-/**
- * 
- * @author ehell
- *
- */
 
 public class RPCClient {
 
@@ -25,16 +20,22 @@ public class RPCClient {
 		remote.register(this);
 	}
 	
-
+	/**
+	 * @author ehell
+	 */
 	public void connect() {
 		
 		// TODO: connect using the underlying messaging layer connection
 		
+		connection = msgclient.connect();
 		
 		
-	    throw new UnsupportedOperationException(TODO.method());
+	   // throw new UnsupportedOperationException(TODO.method());
 			
 	}
+	/**
+	 * @author ehell
+	 */
 	
 	public void disconnect() {
 		
@@ -42,7 +43,7 @@ public class RPCClient {
 		
 		// TODO: disconnect/close the underlying messaging connection
 		
-		throw new UnsupportedOperationException(TODO.method());
+		//throw new UnsupportedOperationException(TODO.method());
 		
 	}
 	

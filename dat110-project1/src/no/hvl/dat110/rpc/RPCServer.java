@@ -25,6 +25,10 @@ public class RPCServer {
 		services.put((int)RPCCommon.RPIDSTOP,new RPCServerStopImpl());
 	}
 	
+	
+	/**
+	 * @author vilde
+	 */
 	public void run() {
 		
 		System.out.println("RPC SERVER RUN - Services: " + services.size());
