@@ -55,7 +55,11 @@ public class RPCUtils {
 	}
 
 	
-	
+	/**
+	 * @author ehell
+	 * @param rpcid
+	 * @return
+	 */
 	public static byte[] marshallVoid(byte rpcid) {
 
 		byte[] encoded = {rpcid};
@@ -64,11 +68,22 @@ public class RPCUtils {
 
 	}
 
+	/**
+	 * @author ehell
+	 * @param data
+	 */
 	public static void unmarshallVoid(byte[] data) {
 
+		byte bytenMin = data[0];
 		//
 	}
-
+	
+	/**
+	 * @author Regine
+	 * @param rpcid
+	 * @param b
+	 * @return
+	 */
 	public static byte[] marshallBoolean(byte rpcid, boolean b) {
 
 		byte[] encoded = new byte[2];
@@ -84,6 +99,11 @@ public class RPCUtils {
 		return encoded;
 	}
 
+	/**
+	 * @author Regine
+	 * @param data
+	 * @return
+	 */
 	public static boolean unmarshallBoolean(byte[] data) {
 
 		return (data[1] > 0);
@@ -91,21 +111,35 @@ public class RPCUtils {
 	}
 
 	/**
-	 * @author Regine
+	 * @author Regine & Emma
 	 * @param rpcid
 	 * @param x
 	 * @return
 	 */
 	public static byte[] marshallInteger(byte rpcid, int x) {
 		// TODO: marshall RPC identifier and string into byte array
-		BigInteger bigInt = BigInteger.valueOf(x);      
-		byte[] encoded = bigInt.toByteArray();
+		byte[] midlertidig = BigInteger.valueOf(x).toByteArray();
+		byte[] encoded = new byte[midlertidig.length+1];
+		
+		encoded[0] = rpcid;
+		for(int i = 0; i < midlertidig.length; i++) {
+			encoded[i+1] = midlertidig[i];
+		}
+			
 		return encoded;
 	}
 
 	public static int unmarshallInteger(byte[] data) {
 		// TODO: unmarshall integer contained in data
-		ByteBuffer byteBuffer = ByteBuffer.wrap(data);
+		
+		byte[] midlertidig = new byte[data.length -1];
+		
+		for(int i = 0; i < midlertidig.length; i++) {
+			midlertidig[i] = data[i+1];
+		}
+		
+		ByteBuffer byteBuffer = ByteBuffer.wrap(midlertidig);
+		
 		int decoded = byteBuffer.getInt();
 		return decoded;
 
