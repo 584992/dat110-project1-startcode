@@ -52,19 +52,18 @@ public class RPCServer {
 			// 1.) Henter beskjeden
 			Message RPCRequest = connection.receive();
 
-			// 2.) RPC id  = RPCRequest[0]
+			// 2.) RPC id = RPCRequest[0]
 			rpcid = RPCRequest.getData()[0];
 
 			// 3.) Finner metoden som skal brukes
 			RPCImpl metode = services.get(rpcid);
-			
+
 			// 4.) Kjører denne metoden
-			metode.invoke(RPCRequest.getData());
+			Message mess = new Message(metode.invoke(RPCRequest.getData()));
 
 			// 5.) Send tilbake endringer
-			connection.send(RPCRequest);
-			
-			
+			connection.send(mess);
+
 //			if (true) {
 //				throw new UnsupportedOperationException(TODO.method());
 //			}

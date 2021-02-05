@@ -68,7 +68,6 @@ public class Connection {
 		
 		try {
 			inStream.read(recvbuf);
-			System.out.println(recvbuf.toString());
 			message.decapsulate(recvbuf);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
