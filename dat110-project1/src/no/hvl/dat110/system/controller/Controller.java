@@ -16,8 +16,8 @@ public class Controller  {
 	 */
 	public static void main (String[] args) {
 		
-		Display display;
-		Sensor sensor;
+		Display display = null;
+		Sensor sensor = null;
 		
 		RPCClient displayclient,sensorclient;
 		
@@ -37,9 +37,8 @@ public class Controller  {
 		DisplayDevice displaydevice;
 		SensorDevice sensordevice;
 		// register display and sensor objects in the RPC layer, ????
-		//displayclient.register(displaydevice);
-		//sensorclient.register(stopsensor);
-		
+		displayclient.register(display);
+		sensorclient.register(sensor);
 		
 		// register stop methods in the RPC layer
 		displayclient.register(stopdisplay);
