@@ -59,12 +59,10 @@ public class RPCServer {
 			RPCImpl metode = services.get(rpcid);
 
 			// 4.) Kjører denne metoden
-<<<<<<< HEAD
 			Message mess = new Message(metode.invoke(RPCRequest.getData()));
-=======
+
 			byte[] nyMelding = metode.invoke(RPCRequest.getData());
 			
->>>>>>> 011a0981d1eb15aab76ba5df0684ede885deab50
 
 			// 5.) Send tilbake endringer
 			connection.send(mess);
