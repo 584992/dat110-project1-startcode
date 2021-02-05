@@ -15,11 +15,14 @@ public class Message {
 
 	public Message(byte[] payload) {
 		
+		try {
 		if(payloadLengthOK(payload)) {
 			this.payload = payload;
 		}else {
+			throw new Exception();
+		}}catch(Exception e){
 			System.out.println("payload lengden er over 128 bits.");
-			//Exception();
+			e.getLocalizedMessage();
 		}
 	}
 
