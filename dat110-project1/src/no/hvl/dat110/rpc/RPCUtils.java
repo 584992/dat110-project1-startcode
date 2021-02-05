@@ -126,46 +126,21 @@ public class RPCUtils {
 	 */
 	public static byte[] marshallInteger(byte rpcid, int x) {
 		
-		System.out.println("Int er " + x);
-		// TODO: marshall RPC identifier and string into byte array
-		//Integer y = x;
-	//	System.out.println(y.byteValue());
+		//Marshall RPC identifier and string into byte array
+		Integer y = x;
 		byte [] encoded = new byte[2];
 		encoded[0] = rpcid;
-		encoded[1] = (byte) x;
+		encoded[1] = y.byteValue();
 		
-		System.out.println("bytevalue er " + encoded[1] );
-		
-//		byte[] midlertidig = BigInteger.valueOf(x).toByteArray();
-//		Byte[] encoded = new Byte[midlertidig.length+1];
-//		
-//		encoded[0] = rpcid;
-//		for(int i = 0; i < midlertidig.length; i++) {
-//			encoded[i+1] = midlertidig[i];
-//		}
-//			
 		return encoded;
 	}
 
 	public static int unmarshallInteger(byte[] data) {
-		// TODO: unmarshall integer contained in data
+		// unmarshall integer contained in data
 		
 		Byte svar = data[1];
 		
-		int encoded = svar.intValue();
-		System.out.println("så blir svar " + encoded);
-		
-//		
-//		Byte[] midlertidig = new Byte[data.length -1];
-//		
-//		for(int i = 0; i < midlertidig.length; i++) {
-//			midlertidig[i] = data[i+1];
-//		}
-//		
-//		Integer j = midlertidig[0];
-//		ByteBuffer byteBuffer = ByteBuffer.wrap(midlertidig);
-//		
-//		int decoded = byteBuffer.getInt();
+		int encoded = Byte.toUnsignedInt(svar);
 		return encoded;
 
 	}
