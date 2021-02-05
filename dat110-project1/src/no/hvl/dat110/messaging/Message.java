@@ -13,13 +13,13 @@ public class Message {
 
 	private byte[] payload;
 
-	public Message(byte[] payload) throws Exception {
+	public Message(byte[] payload) {
 		
 		if(payloadLengthOK(payload)) {
 			this.payload = payload;
 		}else {
 			System.out.println("payload lengden er over 128 bits.");
-			throw new Exception();
+			//Exception();
 		}
 	}
 
