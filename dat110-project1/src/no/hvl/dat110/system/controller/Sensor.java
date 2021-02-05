@@ -17,7 +17,6 @@ public class Sensor extends RPCStub {
 		SensorImpl sensor = new SensorImpl();
 		byte[] reply = sensor.invoke(request);
 		int temp = RPCUtils.unmarshallInteger(reply);
-		System.out.println(temp);
 		return temp;
 	}
 

@@ -52,7 +52,6 @@ public class Controller  {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			System.out.println(temp);
 			display.write(Integer.toString(temp));
 		}
 		stopdisplay.stop();
