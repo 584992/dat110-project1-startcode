@@ -29,8 +29,6 @@ public class RPCUtils {
 	public static byte[] marshallString(byte rpcid, String str) {
 		
 		// TODO: marshall RPC identifier and string into byte array
-
-		System.out.println("Før marshalling: " + str);
 		
 		byte[] encoded;
 		byte[] mid = str.getBytes();
@@ -59,8 +57,6 @@ public class RPCUtils {
 		}
 		
 		String decoded = new String(mid);
-		
-		System.out.println("Etter marshalling: " + decoded);
 		return decoded;
 	}
 
@@ -84,8 +80,10 @@ public class RPCUtils {
 	 */
 	public static void unmarshallVoid(byte[] data) {
 
-		byte bytenMin = data[0];
-		//
+	// Gjør ingenting. Trenger ikke å bli kalt. 
+	// Fra discord: 
+	// "Ja - unmarshallVoid gjør ingenting siden der ikke er noe å "unmarshalle" - 
+	// så det spiller ikke noen rolle om en kaller unmarshall eller ikke.
 	}
 	
 	/**
