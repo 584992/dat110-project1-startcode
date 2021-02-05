@@ -42,7 +42,6 @@ public class RPCServer {
 
 			int rpcid = 0;
 
-			// TODO
 			// - (1) receive message containing RPC request
 			// - (2) find the identifier for the RPC methods to invoke
 			// - (3) lookup the method to be invoked
@@ -67,10 +66,6 @@ public class RPCServer {
 
 			// 5.) Send tilbake endringer
 			connection.send(mess);
-
-//			if (true) {
-//				throw new UnsupportedOperationException(TODO.method());
-//			}
 
 			if (rpcid == RPCCommon.RPIDSTOP) {
 				stop = true;

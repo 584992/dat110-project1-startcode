@@ -28,8 +28,7 @@ public class Controller  {
 		
 		displayclient = new RPCClient(Common.DISPLAYHOST,Common.DISPLAYPORT);
 		sensorclient = new RPCClient(Common.SENSORHOST,Common.SENSORPORT);
-		
-		// TODO
+
 		// connect to sensor and display RPC servers, GJORT
 		displayclient.connect();
 		sensorclient.connect();
@@ -44,7 +43,6 @@ public class Controller  {
 		displayclient.register(stopdisplay);
 		sensorclient.register(stopsensor);
 		
-		// TODO:
 		// loop while reading from sensor and write to display via RPC
 		for(int i = 0;i<N;i++) {
 			int temp = sensor.read();

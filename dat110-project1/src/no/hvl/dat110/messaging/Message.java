@@ -13,8 +13,14 @@ public class Message {
 
 	private byte[] payload;
 
-	public Message(byte[] payload) {
-		this.payload = payload; // TODO: check for length within boundary
+	public Message(byte[] payload) throws Exception {
+		
+		if(payloadLengthOK(payload)) {
+			this.payload = payload;
+		}else {
+			System.out.println("payload lengden er over 128 bits.");
+			throw new Exception();
+		}
 	}
 
 	public Message() {
@@ -24,13 +30,12 @@ public class Message {
 	public byte[] getData() {
 		return this.payload;
 	}
-
+	
 	/**
 	 * @author vilde
 	 * @return encoded -> den nye payloaden som blir encapsulated. hh
 	 */
 	public byte[] encapsulate() {
-		// TODO
 		// encapulate/encode the payload of this message in the
 		// encoded byte array according to message format
 		byte[] encoded = new byte[128]; // Bytes som vi ønsker å encapulate, i størrelse 128
@@ -51,8 +56,6 @@ public class Message {
 	 *                 på plass[0])
 	 */
 	public void decapsulate(byte[] received) {
-
-		// TODO
 		// decapsulate the data contained in the received byte array and store it
 		// in the payload of this message
 	//	int lengde = received.length;
@@ -63,7 +66,9 @@ public class Message {
 			payload[i] = received[i+1];
 		}
 
-//		throw new UnsupportedOperationException(TODO.method());
-
+	}
+	
+	private boolean payloadLengthOK(byte [] p) {
+		return (p.length <= 128);
 	}
 }

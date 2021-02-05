@@ -38,8 +38,6 @@ public class Connection {
 	 * @param message
 	 */
 	public void send(Message message) { 
-
-		// TODO
 		// encapsulate the data contained in the message and write to the output stream
 		// Hint: use the encapsulate method on the message
 		try {
@@ -61,8 +59,6 @@ public class Connection {
 
 		Message message = new Message();
 		byte[] recvbuf = new byte[128];
-
-		// TODO
 		// read a segment (128 bytes) from the input stream and decapsulate into message
 		// Hint: create a new Message object and use the decapsulate method
 		

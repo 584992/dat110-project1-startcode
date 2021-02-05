@@ -11,7 +11,6 @@ public class Sensor extends RPCStub {
 	private SensorImpl sensorImpl;
 	private byte RPCID = 1;
 
-	// TODO
 	// implement marshalling, call and unmarshalling for read RPC method
 	public int read() {
 		int temp = sensorImpl.read();
