@@ -4,6 +4,9 @@ import no.hvl.dat110.TODO;
 import no.hvl.dat110.rpc.RPCImpl;
 import no.hvl.dat110.rpc.RPCUtils;
 
+/**
+ * @author Regine
+ */
 public class DisplayImpl implements RPCImpl {
 
 	public void write(String message) {
