@@ -41,7 +41,6 @@ public class RPCServer {
 		while (!stop) {
 
 			int rpcid = 0;
-			System.out.println(rpcid);
 
 			// TODO
 			// - (1) receive message containing RPC request
@@ -52,10 +51,10 @@ public class RPCServer {
 
 			// 1.) Henter beskjeden
 			Message RPCRequest = connection.receive();
-
+			
+			
 			// 2.) RPC id = RPCRequest[0]
 			rpcid = RPCRequest.getData()[0];
-			
 			
 			// 3.) Finner metoden som skal brukes
 			RPCImpl metode = services.get(rpcid);
