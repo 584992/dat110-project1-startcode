@@ -125,31 +125,48 @@ public class RPCUtils {
 	 * @return
 	 */
 	public static byte[] marshallInteger(byte rpcid, int x) {
-		// TODO: marshall RPC identifier and string into byte array
-		byte[] midlertidig = BigInteger.valueOf(x).toByteArray();
-		byte[] encoded = new byte[midlertidig.length+1];
 		
+		System.out.println("Int er " + x);
+		// TODO: marshall RPC identifier and string into byte array
+		//Integer y = x;
+	//	System.out.println(y.byteValue());
+		byte [] encoded = new byte[2];
 		encoded[0] = rpcid;
-		for(int i = 0; i < midlertidig.length; i++) {
-			encoded[i+1] = midlertidig[i];
-		}
-			
+		encoded[1] = (byte) x;
+		
+		System.out.println("bytevalue er " + encoded[1] );
+		
+//		byte[] midlertidig = BigInteger.valueOf(x).toByteArray();
+//		Byte[] encoded = new Byte[midlertidig.length+1];
+//		
+//		encoded[0] = rpcid;
+//		for(int i = 0; i < midlertidig.length; i++) {
+//			encoded[i+1] = midlertidig[i];
+//		}
+//			
 		return encoded;
 	}
 
 	public static int unmarshallInteger(byte[] data) {
 		// TODO: unmarshall integer contained in data
 		
-		byte[] midlertidig = new byte[data.length -1];
+		Byte svar = data[1];
 		
-		for(int i = 0; i < midlertidig.length; i++) {
-			midlertidig[i] = data[i+1];
-		}
+		int encoded = svar.intValue();
+		System.out.println("så blir svar " + encoded);
 		
-		ByteBuffer byteBuffer = ByteBuffer.wrap(midlertidig);
-		
-		int decoded = byteBuffer.getInt();
-		return decoded;
+//		
+//		Byte[] midlertidig = new Byte[data.length -1];
+//		
+//		for(int i = 0; i < midlertidig.length; i++) {
+//			midlertidig[i] = data[i+1];
+//		}
+//		
+//		Integer j = midlertidig[0];
+//		ByteBuffer byteBuffer = ByteBuffer.wrap(midlertidig);
+//		
+//		int decoded = byteBuffer.getInt();
+		return encoded;
 
 	}
 }
