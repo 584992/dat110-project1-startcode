@@ -16,8 +16,8 @@ public class Controller  {
 	 */
 	public static void main (String[] args) {
 		
-		Display display = null;
-		Sensor sensor = null;
+		Display display = new Display();
+		Sensor sensor = new Sensor();
 		
 		RPCClient displayclient,sensorclient;
 		
