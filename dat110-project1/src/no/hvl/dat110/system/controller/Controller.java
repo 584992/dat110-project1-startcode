@@ -48,6 +48,12 @@ public class Controller  {
 		// loop while reading from sensor and write to display via RPC
 		for(int i = 0;i<N;i++) {
 			int temp = sensor.read();
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			System.out.println(temp);
 			display.write(Integer.toString(temp));
 		}
