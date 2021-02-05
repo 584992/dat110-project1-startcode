@@ -48,6 +48,7 @@ public class Controller  {
 		// loop while reading from sensor and write to display via RPC
 		for(int i = 0;i<N;i++) {
 			int temp = sensor.read();
+			System.out.println(temp);
 			display.write(Integer.toString(temp));
 		}
 		stopdisplay.stop();
