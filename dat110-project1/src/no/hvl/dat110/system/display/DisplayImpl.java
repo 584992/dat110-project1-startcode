@@ -14,7 +14,6 @@ public class DisplayImpl implements RPCImpl {
 	}
 
 	public byte[] invoke(byte[] request) {
-		// TODO:
 		// implement unmarshalling, call, and marshall for write RPC method
 		// look at how this is done int he SensorImpl for the read method
 		String str = RPCUtils.unmarshallString(request);

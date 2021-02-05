@@ -135,6 +135,11 @@ public class RPCUtils {
 		return encoded;
 	}
 
+	/**
+	 * @author ehell
+	 * @param data
+	 * @return
+	 */
 	public static int unmarshallInteger(byte[] data) {
 		// unmarshall integer contained in data
 		

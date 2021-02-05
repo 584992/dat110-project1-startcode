@@ -25,12 +25,9 @@ public class RPCClient extends RPCStub {
 	 */
 	public void connect() {
 		
-		// TODO: connect using the underlying messaging layer connection
+		// connect using the underlying messaging layer connection
 		
 		connection = msgclient.connect();
-		
-		
-	   // throw new UnsupportedOperationException(TODO.method());
 			
 	}
 	/**
@@ -38,13 +35,10 @@ public class RPCClient extends RPCStub {
 	 */
 	
 	public void disconnect() {
+		// disconnect/close the underlying messaging connection
 		
 		connection.close();
-		
-		// TODO: disconnect/close the underlying messaging connection
-		
-		//throw new UnsupportedOperationException(TODO.method());
-		
+				
 	}
 	/**
 	 * @author ehell
