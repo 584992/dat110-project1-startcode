@@ -51,7 +51,6 @@ public class RPCServer {
 			// 1.) Henter beskjeden
 			Message RPCRequest = connection.receive();
 			
-			
 			// 2.) RPC id = RPCRequest[0]
 			rpcid = RPCRequest.getData()[0];
 			
