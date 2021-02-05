@@ -18,7 +18,7 @@ public class Sensor extends RPCStub {
 		System.out.println(temp);
 		byte[] request = RPCUtils.marshallInteger(RPCID, temp);
 		byte[] response = rpcclient.call(request);
-		RPCUtils.unmarshallInteger(response);
+		temp = RPCUtils.unmarshallInteger(response);
 		return temp;
 	}
 
