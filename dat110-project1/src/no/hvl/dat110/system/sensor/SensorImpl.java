@@ -10,8 +10,9 @@ public class SensorImpl implements RPCImpl {
 	public int read() {
 
 		long seconds = System.currentTimeMillis();
-
+System.out.println(seconds+ " dette er sekunder");
 		double temp = RANGE * Math.sin(seconds / 1000);
+		System.out.println(temp + "dette er temp");
 
 		return (int) Math.ceil(temp);
 	}
