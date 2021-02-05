@@ -5,6 +5,11 @@ import no.hvl.dat110.rpc.RPCServer;
 import no.hvl.dat110.system.controller.Common;
 
 
+/**
+ * 
+ * @author Regine
+ *
+ */
 public class DisplayDevice {
 	
 	public static void main(String[] args) {
