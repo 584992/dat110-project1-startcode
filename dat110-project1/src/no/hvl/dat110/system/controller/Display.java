@@ -2,6 +2,7 @@ package no.hvl.dat110.system.controller;
 
 import no.hvl.dat110.TODO;
 import no.hvl.dat110.rpc.*;
+import no.hvl.dat110.system.display.DisplayImpl;
 
 public class Display extends RPCStub {
 
@@ -13,8 +14,9 @@ public class Display extends RPCStub {
 	 */
 	public void write(String message) {
 		// implement marshalling, call and unmarshalling for write RPC method
-		byte[] request = RPCUtils.marshallString(RPCID,message);
-		byte[] response = rpcclient.call(request);
+		byte[] request = RPCUtils.marshallVoid(RPCID);
+		DisplayImpl display = new DisplayImpl();
+		byte[] response = display.invoke(request);
 		RPCUtils.unmarshallString(response);
 	}
 }
